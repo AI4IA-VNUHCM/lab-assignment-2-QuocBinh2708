@@ -19,7 +19,16 @@ int main(int argc, char *argv[]) {
 	float distance = atof(argv[1]);
 	int result;
 	//Your codes here
-	
-	printf("%d", result);
+	if (distance > 0 && distance <=2){
+        result = 15000;
+    }
+    if (distance > 2 && distance <=30){
+        result = (((distance-2)/0.25)*2000)+15000;
+    }
+    if (distance > 30){
+        result = (15000+((distance-(distance-28))/0.25)*2000)+((distance-30)*5000); 
+    }
+
+    printf("%d", result);
 	return 0;
 }
